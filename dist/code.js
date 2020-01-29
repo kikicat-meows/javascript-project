@@ -164,8 +164,6 @@ const d3Mapping = (year, type) => (
     })
 )
 
-
-
 // Scripts for when page load / variables get changed
 
 const slider = document.getElementById('dataYear');
@@ -174,21 +172,36 @@ const radios = document.getElementsByName('crime');
 let crimeRateType;
 
 for (let i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', function(e) {
+        let radio = event.target;
+        if (radio.checked) {
+            crimeRateType = radio.value;
+            d3.selectAll('svg > *').remove();
+            d3Mapping(slider.value, crimeRateType);
+        }
+    });
+
     if (radios[i].checked) {
         crimeRateType = radios[i].value;
     }
 }
 
-d3Mapping(slider.value, crimeRateType);
-
-$(document).on('change', 'input[type=radio]', function() {
-    crimeRateType = $('[name="crime"]:checked').val();
-    d3.selectAll('svg > *').remove();
-    d3Mapping(slider.value, crimeRateType);
-})
-
-slider.oninput = function() {
+slider.oninput = function () {
     d3.selectAll('svg > *').remove();
     d3Mapping(slider.value, crimeRateType);
 }
+
+
+
+// Initializing
+d3Mapping(slider.value, crimeRateType);
+
+
+// On Change
+// $(document).on('change', 'input[type=radio]', function() {
+//     crimeRateType = $('[name="crime"]:checked').val();
+//     d3.selectAll('svg > *').remove();
+//     d3Mapping(slider.value, crimeRateType);
+// })
+
 
