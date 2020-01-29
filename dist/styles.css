@@ -1,0 +1,97 @@
+body {
+	font: 12px sans-serif;
+	background-color: #ffffff;
+}
+
+h1 {
+    font: 30px;
+    text-align: center;
+}
+
+
+#map {
+    margin: auto;
+}
+
+/* Legend Position Style */
+svg.legend {
+	position: absolute;
+	right: -20px;
+	top:75px;
+}
+
+/* Tooltip Position & Style */
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 100px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: #bc2a66;	
+    color: white;
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;	
+    z-index: 1000;		
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+
+.slidecontainer {
+  width: 800px; /* Width of the outside container */
+  margin: auto;
+}
+
+.slidecontainer p span {
+    float: right;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #CC8599; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #CC8599; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.info {
+    width: 800px;
+    margin: auto;
+    font-size: 1.5em;
+}

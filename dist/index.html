@@ -5,18 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>U.S. Crime Rates by States</title>
-    <script src="/dist/main.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="/dist/datamaps.usa.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- DataMaps Code: -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
+    <!-- <script src="/dist/datamaps.usa.min.js"></script> -->
 </head>
 <body>
+    <h1 id='header'>U.S. Crime Rate by States</h1>
 
-    <div id="container" style="position: relative; width: 1000px; height: 600px;"></div>
+    <div id='map' style="position: relative; width: 1000px; height: 600px;"></div>
+    <br>
+    <br>
+    <div class="crimeType">
+        <div class='crimeType-selection'>
+            <label>Violent Crime Rate
+                <input type="radio" name="crime"
+                checked='checked'  value='violent_crime_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Murder Rate
+                <input type="radio" name="crime" 
+                
+                value='murder_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Rape Rate
+                <input type="radio" name="crime" value='rape_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Robbery Rate
+                <input type="radio" name="crime" value='robbery_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Aggravated Assault Rate
+                <input type="radio" name="crime" value='aggravated_assault_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Property Crime Rate
+                <input type="radio" name="crime" value='property_crime_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Burglary Rate
+                <input type="radio" name="crime" value='burglary_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Larceny Theft Rate
+                <input type="radio" name="crime" value='larceny_theft_rate'>
+                <span></span>
+            </label>
+        </div>
+        <div class='crimeType-selection'>
+            <label>Motor Vehicle Theft Rate
+                <input type="radio" name="crime" value='motor_vehicle_theft_rate'>
+                <span></span>
+            </label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="slidecontainer">
+        <input type="range" min="1984" max="2014" value="2014" class="slider" id="dataYear">
+        <p>1984 <span>2014</span></p>
+    </div>
+    <br>
+    <br>
+    <div class='info'>
+        <p>Mouseover each state for detailed crime rates.</p>
+    </div>
 
-    <script>
-        var map = new Datamap({ element: document.getElementById('container'), scope: 'usa' });
-    </script>
+
+    <!-- DataMaps Code: -->
+    <!-- <div id="container" style="position: relative; width: 1000px; height: 600px;"></div>
+    <script src='/dist/index.js'></script> -->
+
+
+    <script src="code.js"></script>
+
+    <!-- =^._.^= -->
     
 </body>
 </html>
