@@ -97,12 +97,12 @@ div.tooltip {
 }
 
 .crimeType {
-    width: 800px;
+    width: 600px;
     margin: auto;
     display: flex;
     justify-content: space-around;
 }
 
 .crimeTypeLeft, .crimeTypeRight {
-    width: 50%;
+    width: 30%;
 }
