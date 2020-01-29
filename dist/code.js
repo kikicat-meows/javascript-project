@@ -181,6 +181,12 @@ for (let i = 0; i < radios.length; i++) {
 
 d3Mapping(slider.value, crimeRateType);
 
+$(document).on('change', 'input[type=radio]', function() {
+    crimeRateType = $('[name="crime"]:checked').val();
+    d3.selectAll('svg > *').remove();
+    d3Mapping(slider.value, crimeRateType);
+})
+
 slider.oninput = function() {
     d3.selectAll('svg > *').remove();
     d3Mapping(slider.value, crimeRateType);
