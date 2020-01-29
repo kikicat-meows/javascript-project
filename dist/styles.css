@@ -93,5 +93,16 @@ div.tooltip {
 .info {
     width: 800px;
     margin: auto;
-    font-size: 1.5em;
+    font-size: 1.25em;
+}
+
+.crimeType {
+    width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.crimeTypeLeft, .crimeTypeRight {
+    width: 50%;
 }

@@ -19,70 +19,73 @@
     <h1 id='header'>U.S. Crime Rate by States</h1>
 
     <div id='map' style="position: relative; width: 1000px; height: 600px;"></div>
-    <br>
-    <br>
+    
     <div class="crimeType">
-        <div class='crimeType-selection'>
-            <label>Violent Crime Rate
-                <input type="radio" name="crime"
-                checked='checked'  value='violent_crime_rate'>
-                <span></span>
-            </label>
+        <div class="crimeTypeLeft">
+            <h2>Violent Crimes:</h2>
+            <div class='crimeType-selection'>
+                <label>Violent Crime Rate
+                    <input type="radio" name="crime" checked='checked' value='violent_crime_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Murder Rate
+                    <input type="radio" name="crime" value='murder_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Rape Rate
+                    <input type="radio" name="crime" value='rape_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Robbery Rate
+                    <input type="radio" name="crime" value='robbery_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Aggravated Assault Rate
+                    <input type="radio" name="crime" value='aggravated_assault_rate'>
+                    <span></span>
+                </label>
+            </div>
         </div>
-        <div class='crimeType-selection'>
-            <label>Murder Rate
-                <input type="radio" name="crime" 
-                
-                value='murder_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Rape Rate
-                <input type="radio" name="crime" value='rape_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Robbery Rate
-                <input type="radio" name="crime" value='robbery_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Aggravated Assault Rate
-                <input type="radio" name="crime" value='aggravated_assault_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Property Crime Rate
-                <input type="radio" name="crime" value='property_crime_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Burglary Rate
-                <input type="radio" name="crime" value='burglary_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Larceny Theft Rate
-                <input type="radio" name="crime" value='larceny_theft_rate'>
-                <span></span>
-            </label>
-        </div>
-        <div class='crimeType-selection'>
-            <label>Motor Vehicle Theft Rate
-                <input type="radio" name="crime" value='motor_vehicle_theft_rate'>
-                <span></span>
-            </label>
+        <div class="crimeTypeRight">
+            <h2>Property Crimes:</h2>
+            <div class='crimeType-selection'>
+                <label>Property Crime Rate
+                    <input type="radio" name="crime" value='property_crime_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Burglary Rate
+                    <input type="radio" name="crime" value='burglary_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Larceny Theft Rate
+                    <input type="radio" name="crime" value='larceny_theft_rate'>
+                    <span></span>
+                </label>
+            </div>
+            <div class='crimeType-selection'>
+                <label>Motor Vehicle Theft Rate
+                    <input type="radio" name="crime" value='motor_vehicle_theft_rate'>
+                    <span></span>
+                </label>
+            </div>
         </div>
     </div>
     <br>
     <br>
     <div class="slidecontainer">
+        <h2>Data Year:</h2>
         <input type="range" min="1984" max="2014" value="2014" class="slider" id="dataYear">
         <p>1984 <span>2014</span></p>
     </div>

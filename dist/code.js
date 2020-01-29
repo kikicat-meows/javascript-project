@@ -106,8 +106,8 @@ const d3Mapping = (year, type) => (
                         .duration(200)
                         .style('opacity', .9);
                     div.html(d.properties.name + "<br/>" + 'Rate: ' + d.properties.value)
-                        .style('left', (d3.event.pageX) + 'px')
-                        .style('top', (d3.event.pageY - 28) + 'px');
+                        .style('left', (event.clientX - 225) + 'px')
+                        .style('top', (event.clientY - 30) + 'px');
                 })
                 .on('mouseout', function (d) {
                     div.transition()
