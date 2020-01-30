@@ -158,3 +158,6 @@ div.tooltip {
     width: 30%;
 }
 
+input[type='radio'] {
+  cursor: pointer;
+}
