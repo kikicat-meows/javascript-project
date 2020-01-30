@@ -66,6 +66,7 @@ div.tooltip {
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
+  border-radius: 5px;
 }
 
 /* Mouse-over effects */
@@ -79,15 +80,18 @@ div.tooltip {
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: #CC8599; /* Green background */
+  background: #000; /* background */
   cursor: pointer; /* Cursor on hover */
+  border-radius: 8px;
 }
 
 .slider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: #CC8599; /* Green background */
+  background: #000; /* background */
   cursor: pointer; /* Cursor on hover */
+  border-radius: 8px;
+
 }
 
 .info {

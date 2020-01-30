@@ -58,7 +58,7 @@ const capitalizeCrimeRateType = function(string) {
 
 const d3Mapping = (year, type, lowColor, highColor) => (
     d3.csv(`../data/${year}.csv`, function (data) {
-        h1.innerHTML = `U.S. ${capitalizeCrimeRateType(type)} by States in ${year}`;
+        h1.innerHTML = `U.S. ${capitalizeCrimeRateType(type)}* by States in ${year}`;
 
         let dataArray = [];
         for (var i = 0; i < data.length; i++) {
