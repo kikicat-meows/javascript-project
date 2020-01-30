@@ -16,9 +16,9 @@ header {
 
 ul {
   margin: auto;
-  min-width: 800px;
-  width: 70%;
-  height: 100px;
+  max-width: 850px;
+  width: 80%;
+  height: 80px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -88,7 +88,7 @@ div.tooltip {
 
 
 .slidecontainer {
-  width: 800px; /* Width of the outside container */
+  width: 850px; /* Width of the outside container */
   margin: auto;
 }
 
@@ -132,7 +132,7 @@ div.tooltip {
 }
 
 .slideinfo {
-  width: 800px;
+  width: 850px;
   margin: auto;
 }
 
