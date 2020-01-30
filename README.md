@@ -44,6 +44,31 @@ d3.csv(`./data/${year}.csv`, function (data) {
             }
         }
 
+// Data mapped using svg (and implementing mouseover tooltip)
+            svg.selectAll('path')
+                .data(json.features)
+                .enter()
+                .append('path')
+                .attr('d', path)
+                .style('stroke', "#fff")
+                .style('stroke-width', '1')
+                .style('fill', function (d) { return ramp(d.properties.value) })
+                .on('mouseover', function (d) {
+                    div.transition()
+                        .duration(200)
+                        .style('opacity', .9);
+                    div.html(d.properties.name + "<br/>" + 'Rate: ' + d.properties.value)
+                        .style('left', (event.clientX - 225) + 'px')
+                        .style('top', (event.clientY - 30) + 'px');
+                })
+                .on('mouseout', function (d) {
+                    div.transition()
+                        .duration(500)
+                        .style('opacity', 0);
+                });
+
+...
+
 });
 ```
 
