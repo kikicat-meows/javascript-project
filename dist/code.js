@@ -57,7 +57,7 @@ const capitalizeCrimeRateType = function(string) {
 
 
 const d3Mapping = (year, type, lowColor, highColor) => (
-    d3.csv(`../data/${year}.csv`, function (data) {
+    d3.csv(`./data/${year}.csv`, function (data) {
         h1.innerHTML = `U.S. ${capitalizeCrimeRateType(type)}* by States in ${year}`;
 
         let dataArray = [];
@@ -71,7 +71,7 @@ const d3Mapping = (year, type, lowColor, highColor) => (
         let ramp = d3.scaleLinear().domain([minVal, maxVal]).range([lowColor, highColor])
 
         // Load GeoJSON data and merge with states data
-        d3.json("us-states.json", function (json) {
+        d3.json("./dist/us-states.json", function (json) {
             for (let i = 0; i < data.length; i++) {
                 let dataState = data[i].state;
 
