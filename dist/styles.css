@@ -51,10 +51,6 @@ div.tooltip {
   margin: auto;
 }
 
-.slidecontainer p span {
-    float: right;
-}
-
 /* The slider itself */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
@@ -92,6 +88,16 @@ div.tooltip {
   cursor: pointer; /* Cursor on hover */
   border-radius: 8px;
 
+}
+
+.slideinfo {
+  width: 800px;
+  margin: auto;
+}
+
+.slideinfo p {
+  display: flex;
+  justify-content: space-between;
 }
 
 .info {
