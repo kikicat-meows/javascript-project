@@ -3,7 +3,18 @@ const width = 960;
 const height = 500;
 
 const lowColor = '#f9f9f9'
-const highColor = '#bc2a66'
+
+const highColor = {
+    'violent_crime_rate': '#bc2a66',
+    'murder_rate': '#BC4537',
+    'rape_rate': '#9A3B7E',
+    'robbery_rate': '#A46515',
+    'aggravated_assault_rate': '#724787',
+    'property_crime_rate': '#324D6F',
+    'burglary_rate': '#00C9B0',
+    'larceny_theft_rate': '#DDA11D',
+    'motor_vehicle_theft_rate': '#897456'
+}
 // const highColor = '#df002c'
 
 //D3 Projection
@@ -28,10 +39,7 @@ const div = d3.select('div')
     .style('opacity', 0);
 
 
-
-
-
-
+// to return correct formatting of crime rate type in header
 const capitalizeCrimeRateType = function(string) {
     let words = string.split('_');
     let newWords = [];
@@ -48,21 +56,8 @@ const capitalizeCrimeRateType = function(string) {
 }
 
 
-const d3Mapping = (year, type) => (
+const d3Mapping = (year, type, lowColor, highColor) => (
     d3.csv(`../data/${year}.csv`, function (data) {
-        // return {
-        //     year: +data.year,
-        //     state: data.state,
-        //     violent_crime_rate: +data.violent_crime_rate,
-        //     property_crime_rate: +data.property_crime_rate,
-        //     murder_rate: +data.murder_rate,
-        //     rape_rate: +data.rape_rate,
-        //     robbery_rate: +data.robbery_rate,
-        //     aggravated_assault_rate: +data.aggravated_assault_rate,
-        //     burglary_rate: +data.burglary_rate,
-        //     larceny_theft_rate: +data.larceny_theft_rate,
-        //     motor_vehicle_theft_rate: +data.motor_vehicle_theft_rate
-        // }
         h1.innerHTML = `U.S. ${capitalizeCrimeRateType(type)} by States in ${year}`;
 
         let dataArray = [];
@@ -177,7 +172,7 @@ for (let i = 0; i < radios.length; i++) {
         if (radio.checked) {
             crimeRateType = radio.value;
             d3.selectAll('svg > *').remove();
-            d3Mapping(slider.value, crimeRateType);
+            d3Mapping(slider.value, crimeRateType, lowColor, highColor[crimeRateType]);
         }
     });
 
@@ -188,20 +183,12 @@ for (let i = 0; i < radios.length; i++) {
 
 slider.oninput = function () {
     d3.selectAll('svg > *').remove();
-    d3Mapping(slider.value, crimeRateType);
+    d3Mapping(slider.value, crimeRateType, lowColor, highColor[crimeRateType]);
 }
 
 
-
 // Initializing
-d3Mapping(slider.value, crimeRateType);
+d3Mapping(slider.value, crimeRateType, lowColor, highColor[crimeRateType]);
 
-
-// On Change
-// $(document).on('change', 'input[type=radio]', function() {
-//     crimeRateType = $('[name="crime"]:checked').val();
-//     d3.selectAll('svg > *').remove();
-//     d3Mapping(slider.value, crimeRateType);
-// })
 
 
