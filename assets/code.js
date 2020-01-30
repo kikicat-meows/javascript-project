@@ -74,7 +74,7 @@ const d3Mapping = (year, type, lowColor, highColor) => (
         let ramp = d3.scaleLinear().domain([minVal, maxVal]).range([lowColor, highColor])
 
         // Load GeoJSON data and merge with states data
-        d3.json("./dist/us-states.json", function (json) {
+        d3.json("./assets/us-states.json", function (json) {
             for (let i = 0; i < data.length; i++) {
                 let dataState = data[i].state;
 
