@@ -64,7 +64,7 @@ const d3Mapping = (year, type, lowColor, highColor) => (
         textYear.innerHTML = `${year}`;
 
         let dataArray = [];
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             dataArray.push(parseFloat(data[i][`${type}`]))
         }
 
@@ -80,7 +80,7 @@ const d3Mapping = (year, type, lowColor, highColor) => (
 
                 let dataValue = data[i][`${type}`];
 
-                for (var j = 0; j < json.features.length; j++) {
+                for (let j = 0; j < json.features.length; j++) {
                     let jsonState = json.features[j].properties.name;
 
                     if (dataState == jsonState) {
@@ -114,15 +114,15 @@ const d3Mapping = (year, type, lowColor, highColor) => (
                 });
 
             // legend
-            var w = 140, h = 300;
+            const w = 140, h = 300;
 
-            var key = d3.select("div")
+            let key = d3.select("div")
                 .append("svg")
                 .attr("width", w)
                 .attr("height", h)
                 .attr("class", "legend");
 
-            var legend = key.append("defs")
+            let legend = key.append("defs")
                 .append("svg:linearGradient")
                 .attr("id", "gradient")
                 .attr("x1", "100%")
@@ -147,11 +147,11 @@ const d3Mapping = (year, type, lowColor, highColor) => (
                 .style("fill", "url(#gradient)")
                 .attr("transform", "translate(0,10)");
 
-            var y = d3.scaleLinear()
+            let y = d3.scaleLinear()
                 .range([h, 0])
                 .domain([minVal, maxVal]);
 
-            var yAxis = d3.axisRight(y);
+            let yAxis = d3.axisRight(y);
 
             key.append("g")
                 .attr("class", "y axis")
