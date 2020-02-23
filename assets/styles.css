@@ -18,7 +18,7 @@ ul {
   margin: auto;
   max-width: 850px;
   width: 80%;
-  height: 80px;
+  height: 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -52,6 +52,7 @@ h1 {
 
 #map {
     margin: auto;
+    z-index: 1;
 }
 
 /* Legend Position Style */
@@ -144,12 +145,14 @@ div.tooltip {
 .info {
     width: 800px;
     margin: auto;
-    font-size: 1.1em;
+    font-size: 1em;
+    padding-top: 0.5em;
 }
 
 .crimeType {
     width: 600px;
     margin: auto;
+    margin-top: -50px;
     display: flex;
     justify-content: space-around;
 }
@@ -160,4 +163,13 @@ div.tooltip {
 
 input[type='radio'] {
   cursor: pointer;
+}
+
+h2 {
+  margin-block-end: 0.5em;
+}
+
+p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
